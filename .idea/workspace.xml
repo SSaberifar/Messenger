@@ -7,14 +7,9 @@
     <list default="true" id="2829f57a-b9c0-4c7c-8eb0-1cdb6de4bcf7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Alice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Alice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Bob.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/messenger/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/messenger/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/messenger/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/messengerApp/Alice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Alice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/messengerApp/Bob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Bob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/messengerApp/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +25,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -55,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Hp/Desktop/Messenger",
+    "last_opened_file_path": "D:/java/Messenger",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,15 +60,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Bob" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Bob" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="messengerApp.Bob" />
       <module name="Messenger" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="messengerApp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -93,23 +75,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Bob" />
       <item itemvalue="Application.Alice" />
       <item itemvalue="Application.Server" />
-      <item itemvalue="Application.Bob" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Bob" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -126,6 +95,7 @@
       <workItem from="1717759369240" duration="2623000" />
       <workItem from="1717778854552" duration="4894000" />
       <workItem from="1717829317411" duration="1227000" />
+      <workItem from="1717830850581" duration="1831000" />
     </task>
     <servers />
   </component>

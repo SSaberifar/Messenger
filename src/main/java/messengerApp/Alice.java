@@ -23,7 +23,7 @@ public class Alice {
 
             // Read and display server messages
             System.out.println(in.readLine());
-            out.println("Alice"); // Username prompt response
+            out.println(console.readLine()); // Username prompt response
 
             System.out.println(in.readLine());
             out.println(console.readLine()); // Password prompt response
