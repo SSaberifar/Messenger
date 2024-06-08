@@ -1,8 +1,9 @@
 module com.example.messenger {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.logging;
 
 
-    opens com.example.messenger to javafx.fxml;
-    exports com.example.messenger;
+    opens messengerApp to javafx.fxml;
+    exports messengerApp;
 }
