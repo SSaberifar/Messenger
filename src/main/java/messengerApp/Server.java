@@ -22,6 +22,28 @@ public class Server {
     private static final int THREAD_POOL_SIZE = 10;
     private static final Logger logger = Logger.getLogger(Server.class.getName());
 
+    public static void getMessage(String user) {
+        for (User user1 : users) {
+            if (user1.getUsername().equals(user)) {
+                for (String message : user1.getMessages()) {
+                    System.out.println(message);
+                    user1.getMessages().remove(message);
+                }
+            }
+        }
+    }
+
+    public static void sendMessage(String user) {
+        for (User user1 : users) {
+            if (user1.getUsername().equals(user)) {
+                for (String message : user1.getMessages()) {
+                    System.out.println(message);
+                    user1.getMessages().remove(message);
+                }
+            }
+        }
+    }
+
     public static void LogIn(String user) {
         System.out.println("1-Send message:");
         System.out.println("2-get message");
@@ -30,15 +52,18 @@ public class Server {
         int ans2 = scanner.nextInt();
         switch (ans2) {
             case 1:
-
+                sendMessage(user);
                 break;
             case 2:
-
+                getMessage(user);
                 break;
             case 3:
                 menu1(user);
                 break;
         }
+    }
+
+    private static void sendMessage(String user) {
     }
 
     public static void menu1(String user) {

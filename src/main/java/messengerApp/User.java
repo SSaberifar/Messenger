@@ -1,9 +1,12 @@
 package messengerApp;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class User {
 
+    private List<String> messages = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
     private String username;
     private String lastname;
@@ -17,6 +20,14 @@ public class User {
         setUsername(username);
         setId(id);
         setPassword(password);
+    }
+
+    public List<String> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<String> messages) {
+        this.messages = messages;
     }
 
     public void setFirstname(String firstname) {
