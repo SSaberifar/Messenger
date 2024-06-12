@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class Server {
 
     private static final List<User> users = new ArrayList<>();
-    private static final int PORT = 8888;
+    private static final int PORT = 5000;
     private static final int THREAD_POOL_SIZE = 10;
     private static final Logger logger = Logger.getLogger(Server.class.getName());
 
@@ -50,20 +50,29 @@ public class Server {
             try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                  PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
-                out.println("Enter name:");
-                String name = in.readLine();
+                out.println("Enter first name:");
+                String fisrtname = in.readLine();
+
+//                out.println("Enter first name:");
+//                String lastname = in.readLine();
 
                 out.println("Enter id:");
                 String id = in.readLine();
 
+                //out.println("Enter password:");
+                //String password = in.readLine();
+
+                //out.println("Enter username:");
+                //String username = in.readLine();
+
+
                 synchronized (users) {
-                    users.add(new User(name, id));
+                    users.add(new User(fisrtname ,id));
                 }
 
                 String message;
                 while ((message = in.readLine()) != null) {
                     out.println("Echo: " + message);
-
                 }
 
             } catch (IOException e) {

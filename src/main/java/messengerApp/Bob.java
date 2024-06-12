@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class Bob {
 
     private static final String HOSTNAME = "localhost";
-    private static final int PORT = 8888; // Ensure this matches the server port
+    private static final int PORT = 5000;
     private static final Logger logger = Logger.getLogger(Bob.class.getName());
 
     public static void main(String[] args) {
@@ -21,12 +21,12 @@ public class Bob {
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
              BufferedReader console = new BufferedReader(new InputStreamReader(System.in))) {
 
-            // Read and display server messages
-            System.out.println(in.readLine());
-            out.println(console.readLine()); // Username prompt response
 
             System.out.println(in.readLine());
-            out.println(console.readLine()); // Password prompt response
+            out.println(console.readLine());
+
+            System.out.println(in.readLine());
+            out.println(console.readLine());
 
             String message;
             while (true) {
