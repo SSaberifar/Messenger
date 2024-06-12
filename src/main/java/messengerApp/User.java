@@ -11,12 +11,12 @@ public class User {
     private String id;
     private String password;
 
-    public User(String firstname, String id) {
+    public User(String firstname, String lastname, String id, String username, String password) {
         setFirstname(firstname);
-//        setLastname(firstname);
-//        setUsername(username);
+        setLastname(lastname);
+        setUsername(username);
         setId(id);
-//        setPassword(password);
+        setPassword(password);
     }
 
     public void setFirstname(String firstname) {
@@ -77,9 +77,9 @@ public class User {
     }
 
     public void setPassword(String password) {
-        if (password != null){
+        if (password != null) {
             this.password = firstname;
-        }else {
+        } else {
             setPassword(scanner.next());
         }
     }

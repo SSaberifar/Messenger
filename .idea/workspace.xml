@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2829f57a-b9c0-4c7c-8eb0-1cdb6de4bcf7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/messengerApp/Alice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Alice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/messengerApp/Bob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Bob.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/messengerApp/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/messengerApp/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/messengerApp/User.java" afterDir="false" />
     </list>
@@ -43,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/java/UniSystem",
+    "last_opened_file_path": "C:/Users/Hp/Desktop/Messenger",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,6 +79,14 @@
       <item itemvalue="Application.Server" />
     </list>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -99,10 +106,22 @@
       <workItem from="1717872950487" duration="11000" />
       <workItem from="1718176813170" duration="1411000" />
       <workItem from="1718181113950" duration="2831000" />
+      <workItem from="1718184720793" duration="752000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/messengerApp/Server.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
