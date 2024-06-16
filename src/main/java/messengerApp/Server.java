@@ -4,11 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.lang.runtime.TemplateRuntime;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Level;
@@ -22,67 +21,90 @@ public class Server {
     private static final int THREAD_POOL_SIZE = 10;
     private static final Logger logger = Logger.getLogger(Server.class.getName());
 
-    public static void getMessage(String user) {
-        for (User user1 : users) {
-            if (user1.getUsername().equals(user)) {
-                for (String message : user1.getMessages()) {
-                    System.out.println(message);
-                    user1.getMessages().remove(message);
+    private static HashMap<String, MessageQueue<String>> messages = new HashMap<>();
+    private static HashMap<User, String> userStatus = new HashMap<>();
+
+    public static void addAll() {
+        users.add(new User("Alice", "Smith", "1", "alice", "1"));
+        users.add(new User("Bob", "Johnson", "2", "bob", "12"));
+        users.add(new User("Rob", "Walker", "3", "RobW", "123"));
+    }
+    public static void getMessage(String username , PrintWriter out) {
+        for (User user : users) {
+            if (user.getUsername().equals(username)) {
+                if (user.getMessages().isEmpty()) {
+                    out.println("No new messages!");
+                } else {
+                    for (String message : user.getMessages())
+                        out.println("Message: " +message);
                 }
+                user.getMessages().clear();
+            }
+            return;
+        }
+
+        System.out.println("User not found!");
+    }
+
+    public static void sendMessage(String sender , String recipient , String messageContent , PrintWriter out) {
+        for (User user : users){
+            if (user.getUsername().equals(recipient)){
+                user.addMessage("from_" + sender + ": " + messageContent);
+                out.println("Message sent to " + recipient);
+                return;
             }
         }
+        out.println("User " + recipient + " not found.");
     }
 
-    public static void sendMessage(String user) {
-        for (User user1 : users) {
-            if (user1.getUsername().equals(user)) {
-                for (String message : user1.getMessages()) {
-                    System.out.println(message);
-                    user1.getMessages().remove(message);
-                }
-            }
-        }
+    public static void LogIn(String username, PrintWriter out, BufferedReader in) throws IOException {
+       while(true){
+           out.println("1-Send message:");
+           out.println("2-get message");
+           out.println("3-Log out:");
+           out.println("please enter number:");
+           int ans2 = scanner.nextInt();
+           switch (ans2) {
+               case 1:
+                   out.println("Enter recipient username:");
+                   String recipient = in.readLine();
+                   out.println("Enter message:");
+                   String message = in.readLine();
+                   sendMessage(username, recipient, message, out);
+                   break;
+               case 2:
+                   getMessage(username, out);
+                   break;
+               case 3:
+                   userStatus.put(new User(username, null, null, null, null), "offline");
+                   return;
+           }
+       }
     }
 
-    public static void LogIn(String user) {
-        System.out.println("1-Send message:");
-        System.out.println("2-get message");
-        System.out.println("3-Log out:");
-        System.out.println("please enter number:");
-        int ans2 = scanner.nextInt();
-        switch (ans2) {
-            case 1:
-                sendMessage(user);
-                break;
-            case 2:
-                getMessage(user);
-                break;
-            case 3:
-                menu1(user);
-                break;
-        }
-    }
 
-    private static void sendMessage(String user) {
-    }
-
-    public static void menu1(String user) {
-        System.out.println("1-Log in:");
-        System.out.println("2-Delete:");
-        System.out.println("Please enter number:");
-        int ans1 = scanner.nextInt();
-        switch (ans1) {
-            case 1:
-                LogIn(user);
-                break;
-            case 2:
-                for (User user1 : users) {
-                    if (user1.getUsername().equals(user)) {
-                        users.remove(user1);
+    public static void mainMenu(String username , PrintWriter out , BufferedReader in) throws IOException {
+        while(true){
+            out.println("1-Log in:");
+            out.println("2-Delete:");
+            out.println("Please enter number:");
+            int choice = Integer.parseInt(in.readLine());
+            switch (choice) {
+                case 1:
+                    userStatus.put(new User(username, null, null, null, null), "online");
+                    LogIn(username, out, in);
+                    break;
+                case 2:
+                    synchronized (users){
+                    for (User user1 : users) {
+                        if (user1.getUsername().equals(username)) {
+                            users.remove(user1);
+                        }
                     }
                 }
-                break;
+                    return;
 
+            }
         }
     }
 
@@ -133,14 +155,15 @@ public class Server {
 
 
                 synchronized (users) {
+                    out.println("user added");
                     users.add(new User(fisrtname, lastname, id, username, password));
-                    menu1(username);
+                    mainMenu(username , out, in);
                 }
 
-                String message;
-                while ((message = in.readLine()) != null) {
-                    out.println("Echo: " + message);
-                }
+//                String message;
+//                while ((message = in.readLine()) != null) {
+//                    out.println("Echo: " + message);
+//                }
 
             } catch (IOException e) {
                 logger.log(Level.WARNING, "Client handler exception: ", e);

@@ -23,10 +23,19 @@ public class Alice {
 
             // Read and display server messages
             System.out.println(in.readLine());
-            out.println(console.readLine()); // Username prompt response
+            out.println(console.readLine()); // fistname prompt response
 
             System.out.println(in.readLine());
-            out.println(console.readLine()); // Password prompt response
+            out.println(console.readLine()); // lastname prompt response
+
+            System.out.println(in.readLine());
+            out.println(console.readLine()); // id prompt response
+
+            System.out.println(in.readLine());
+            out.println(console.readLine()); // pass prompt response
+
+            System.out.println(in.readLine());
+            out.println(console.readLine()); // username prompt response
 
             String message;
             while (true) {

@@ -2,6 +2,7 @@ package messengerApp;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class User {
@@ -26,10 +27,28 @@ public class User {
         return messages;
     }
 
-    public void setMessages(List<String> messages) {
-        this.messages = messages;
+    public void addMessage(String msg) {
+        messages.add(msg);
     }
 
+    @Override
+    public String toString() {
+        return "User{name='" + firstname + "', id='" + id + "'}";
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        User user = (User) object;
+        return username.equals(user.getUsername());
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(username);
+    }
     public void setFirstname(String firstname) {
         if (firstname != null) {
             this.firstname = firstname;
@@ -52,11 +71,6 @@ public class User {
 
     public String getId() {
         return id;
-    }
-
-    @Override
-    public String toString() {
-        return "User{name='" + firstname + "', id='" + id + "'}";
     }
 
     public String getUsername() {
